@@ -15,17 +15,31 @@ function Pet(name,age,gender,breed){
 
 function register(){
     let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value);
-    pets.push(newPet);
-    console.log(newPet);
-    alert("The registration was successful!!!");
-    displayInfo();
-    clearForm();
+    if(isValid(newPet)){
+        pets.push(newPet);
+        displayInfo();
+        clearForm();
+        displayPets();
+    }else{
+        alert("Please fill out all the fields!");
+    }
 }
 
-function displayInfo(){
-    // display the total registered pets
-    document.getElementById("info").innerHTML=`<p>Total of pets: ${pets.length}</p>`
+function isValid(aPet){
+    let validation = true; // everything is good
+
+    if(aPet.name === ""){
+        validation=false;// Oops something was wrong
+    }
+
+    if(aPet.gender === ""){
+        validation=false;
+    }
+
+    return validation;
 }
+
+
 
 function clearForm(){
 
@@ -40,6 +54,7 @@ function init(){
     console.log(pets);
 
     displayInfo();
+    displayPets();
 }
 
 window.onload=init; //render the HTML
