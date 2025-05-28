@@ -39,6 +39,13 @@ function isValid(aPet){
     return validation;
 }
 
+function deletePet(petIndex){
+    console.log("Delete pet " + petIndex);
+    document.getElementById(petIndex).remove();
+    pets.splice(petIndex, 1);
+    displayPets();
+}
+
 
 
 function clearForm(){
@@ -48,7 +55,7 @@ function clearForm(){
 function init(){
     //create objs
     let pet1 = new Pet("Scooby",99,"Male","Dane");
-    let pet2 = new Pet("Scrappy",80,"Male","Mixed");
+    let pet2 = new Pet("Scrappy",80,"Female","Mixed");
     let pet3 = new Pet("Tweety bird",99,"Male","Canarian");
     pets.push(pet1,pet2,pet3);
     console.log(pets);
