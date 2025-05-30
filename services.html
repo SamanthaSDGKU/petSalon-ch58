@@ -3,13 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/bootstrap.css">
+    <link rel="stylesheet" href="./styles/mystyle.css">
     <title>Document</title>
 </head>
 <body>
     
     <h1>Services</h1>
 
+    <main class="container">
+        <h2>Register a new service</h2>
+        <div class="container">
+            <div class="mb-3">
+                <label>Title*: </label>
+                <input class="form-control" type="text" id="txtTitle">
+                <small id="titleRequirementText">This field is required.</small>
+            </div>
+            <div class="mb-3">
+                <label>Price*:</label>
+                <input class="form-control" type="number" id="txtPrice">
+                <small id="priceRequirementText">This field is required.</small>
+            </div>
+            <div>
+                <button class="btn btn-primary" id="btnRegister">Register</button>
+            </div>
+        </div>
+    </main>
+
     <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/storeManager.js"></script>
     <script src="./scripts/services.js"></script>
 </body>
 </html>
